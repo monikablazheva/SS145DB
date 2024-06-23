@@ -4,6 +4,7 @@
 #include "Constants.h"
 #include <fstream>
 #include <sstream>
+#include <iomanip> // For std::setw
 
 class Row
 {
@@ -21,8 +22,20 @@ public:
 
     const MyString& getValueByColumnIndex(size_t columnIndex) const;
     void setValue(size_t columnIndex, const MyString& value);
+    void setColumnsCount(size_t columnsCount);
+
+    void addCell(const MyString& cell);
+    void addCellAt(const MyString& cell, size_t index);
+
+    void deleteValueFromCell();
+    void deleteValueFromCellAt(size_t index);
+
+    void removeCell();
+    void removeCellAt(size_t index);
 
     void serialize(std::ostream& os);
     void deserialize(const char* rowFromFile);
+
+    void print() const;
 };
 

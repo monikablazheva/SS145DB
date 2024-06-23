@@ -3,6 +3,9 @@
 
 int main()
 {
+    //Test create table test (field1 int, field2 real)
+    //-------------------------------------------------------------
+
     MyString tableName = "test";
 
     MyString colName1 = "field1";
@@ -19,6 +22,8 @@ int main()
 
     Table table(tableName, 2, colsNames, colsTypes);
     table.serialize();
+
+    //--------------------------------------------------------------
 
     MyString cell00 = "1";
     MyString cell01 = "1.0";
